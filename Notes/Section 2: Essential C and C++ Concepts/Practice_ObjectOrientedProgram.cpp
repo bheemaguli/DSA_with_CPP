@@ -3,27 +3,28 @@
 
 using namespace std;
 
-struct Rectangle{
-    int length, breadth;
+class Rectangle{
+    public:
+        int length, breadth;
+
+        void initialise(int l, int b){
+            length = l;
+            breadth = b;
+        }
+
+
+        int area(){
+            return length*breadth;
+        }
+
+        int perimeter(){
+            return 2*(length + breadth);
+        }
 };
-
-int area(Rectangle r){
-    return r.length*r.breadth;
-}
-
-int perimeter(Rectangle r){
-    return 2*(r.length + r.breadth);
-}
- 
-
-void initialise(struct Rectangle *r, int l, int b){
-    r->length=l;
-    r->breadth=b;
-}
 
 int main() { 
 
-    struct Rectangle r={0,0};
+    Rectangle r;
 
     int l, b;
     printf("Enter Length : "); 
@@ -31,10 +32,10 @@ int main() {
     printf("Enter Breadth : "); 
     cin>>b; 
 
-    initialise(&r, l, b);
+    r.initialise(l, b);
 
-    int a=area(r); 
-    int p=perimeter(r); 
+    int a=r.area(); 
+    int p=r.perimeter(); 
     printf("Area=%d\nPerimeter=%d\n",a,p); 
     return 0; 
     // Enter Length : 18
