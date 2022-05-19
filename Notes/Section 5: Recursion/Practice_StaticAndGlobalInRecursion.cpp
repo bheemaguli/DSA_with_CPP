@@ -12,6 +12,6 @@ int fun(int n){
 
 int main(){
     int x=5;
-    printf("%d", fun(x));
+    printf("%d\n ", fun(x));
     return 0;
 }
